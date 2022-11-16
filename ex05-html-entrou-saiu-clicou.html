@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            background: rgb(96, 4, 216);
+            color: white;
+            font: normal 18pt Arial;
+        }
+        div#area {
+            font: normal 20pt Arial;
+            background: green;
+            color:white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Clique aqui
+    </div>
+    <script>
+//1. Cria uma função e {}
+//2. Cria uma ação ()
+//3. Tudo dentro da função é um bloco
+//4. Dentro dos parentes pode ter um parâmetro
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        //Quando clicar vai aparecer isso e mudar a cor do bg:
+        function clicar(){
+            //Vai mudar o texto da div
+            a.innerText = 'Clicou!'
+            //Vai mudar a cor do bg da div
+            a.style.background = 'red'
+        }
+        //Quando o mouse entrar no quadrado, vai aparecer isso:
+        function entrar(){
+            a.innerText = 'Entrou!'
+        }
+        //Quando o mouse sair do quadrado, aparecerá isso:
+        function sair(){
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
